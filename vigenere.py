@@ -1,7 +1,7 @@
 def vigenere():
 	alphavite = 'abcdefghijklmnopqrstuvwxyz'
 	word_key = 'abc'
-	open_text = 'hello!'
+	open_text = 'hello'
 	closed_text = ''
 	
 	char_open_text = 0
