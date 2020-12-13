@@ -30,24 +30,24 @@ def credit_card():
 		user_num_card = input("Enter a num card: ")
 		if len(user_num_card) == 15:
 			if user_num_card[:2] == '34' or user_num_card[:2] == '37':
-				print("American Express")
+				print("AMEX\n")
 				algorithm_luna(user_num_card)
 			else:
 				print ("Looks like you're trying to enter the American Express card number. We remind you that the numbers of these cards start with 34 or 37.\n")
 				continue
 		if len(user_num_card) == 16:
 			if user_num_card[:2] in master_card:
-				print("MasterCard")
+				print("MASTERCARD\n")
 				algorithm_luna(user_num_card)
 			elif user_num_card[:1] == '4':
-				print("Visa")
+				print("VISA\n")
 				algorithm_luna(user_num_card)
 			else:
 				print ("Looks like you're trying to enter the MasterCard or Visa card number. We remind you that the numbers of these cards start with 51/52/53/54/55(MasterCard) and with 4(Visa).\n")
 				continue
 		if len(user_num_card) == 13:
 			if user_num_card[:1] == '4':
-				print("Visa")
+				print("VISA\n")
 				algorithm_luna(user_num_card)
 			else:
 				print ("Looks like you're trying to enter the Visa card number. We remind you that the number of this card start with 4.\n")
@@ -56,6 +56,3 @@ def credit_card():
 			print("Looks like you're trying to enter less or more digits than the one on the payment card.")
 			continue
 credit_card()
-				
-	
-		
