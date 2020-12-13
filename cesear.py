@@ -1,7 +1,7 @@
-def cesear():
-	key = 3
+def ceasar():
+	key = int(input("Enter a key: "))
 	alphavite = 'abcdefghijklmnopqrstuvwxyz'
-	open_text = "Hello, my Cousin! I have a good news. I marry on Elizabeth!"
+	open_text = str(input("Enter a text: "))
 	closed_text = ""
 	
 	for char in open_text:	
@@ -10,6 +10,7 @@ def cesear():
 			for charr in alphavite:
 				if alphavite.index(charr) == offset:
 					closed_text += charr
+					
 		else:
 			if char == char.upper():
 				char = char.lower()
@@ -18,10 +19,12 @@ def cesear():
 					for charr in alphavite:
 						if alphavite.index(charr) == offset:
 							closed_text += charr.upper()
-			closed_text += char
+							
+			if char not in alphavite:
+				closed_text += char
 			
 	
 	print(open_text)
 	print(closed_text)
 	
-cesear()
+ceasar()
