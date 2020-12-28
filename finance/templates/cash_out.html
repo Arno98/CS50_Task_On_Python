@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cash out
+{% endblock %}
+
+{% block main %}
+    <form action="/cash_out" method="POST">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="amount" placeholder="Amount" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="credit_card_number" placeholder="Credit card number" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Cash out</button>
+    </form>
+{% endblock %}

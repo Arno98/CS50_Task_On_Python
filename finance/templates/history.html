@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total price</th>
+                <th>Value</th>
+                <th>Datetime</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for dict in transactions %}
+                <tr>
+                    <td>{{ dict["stock"] }}</td>
+                    <td>{{ dict["symbol"] }}</td>
+                    <td>{{ dict["quantity"] }}</td>
+                    <td>{{ dict["price"] }}</td>
+                    <td>{{ dict["totalprice"] }}</td>
+                    {% if dict["value"] == "bought" %}
+                        <td class="value_1">{{ dict["value"] }}</td>
+                    {% else %}
+                        <td class="value_2">{{ dict["value"] }}</td>
+                    {% endif %}
+                    <td>{{ dict["datetime"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    {% for k, v in quote.items() %}
+        <div class="quote">
+            {% if k == "price" %}
+                <h3>{{ k.title() }}: {{ v }}$</h3>
+            {% else %}
+                 <h3>{{ k.title() }}: {{ v }}</h3>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

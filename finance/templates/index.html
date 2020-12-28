@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <div class="cash">
+        <h4>Current cash: {{ user_cash }}</h4>
+        <h4>Current investments: {{ current_investments }}</h4>
+        {% if current_profit > 0 %}
+            <h4 class="profit_1">Current profit: {{ profit }}</h4>
+        {% elif current_profit < 0 %}
+            <h4 class="profit_2">Current profit: {{ profit }}</h4>
+        {% elif current_profit == 0 %}
+            <h4 class="profit_3">Current profit: {{ profit }}</h4>
+        {% endif %}
+        <h4>Total cash: {{ total_user_cash }}</h4>
+    </div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Quantity</th>
+                <th>Purchase price</th>
+                <th>Current price</th>
+                <th>Total contribution</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for dict in portfolio %}
+                <tr>
+                    <td>{{ dict["stock"] }}</td>
+                    <td>{{ dict["symbol"] }}</td>
+                    <td>{{ dict["quantity"] }}</td>
+                    <td>{{ dict["purchaseprice"] }}</td>
+                    <td>{{ dict["current_price"] }}</td>
+                    <td>{{ dict["totalprice"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
